@@ -1,0 +1,19 @@
+{
+  "name": "apresentacao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-validator": "^4.3.0",
+    "morgan": "^1.9.0"
+  }
+}
