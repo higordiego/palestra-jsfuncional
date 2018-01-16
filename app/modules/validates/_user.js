@@ -18,6 +18,3 @@ module.exports = app => {
         }
     }
 }
-
-// const Errors = require('../../errors/user/pt-br')
-// const Validate = require('../../helpers/validate')

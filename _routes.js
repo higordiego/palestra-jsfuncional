@@ -1,4 +1,3 @@
 module.exports = app => {
-    require('./app/modules/routes/user')
-    
+    require('./app/modules/routes/user')(app)
 }

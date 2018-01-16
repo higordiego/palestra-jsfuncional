@@ -6,6 +6,7 @@ const path = require('path')
 const morgan = require('morgan')
 const validator = require('express-validator')
 const validateFormat = require('./app/errors/validate')
+require('./app/config/databases/mongodb')
 
 const app = express()
 
@@ -23,6 +24,7 @@ const port = process.env.PORT || 3000
 const server = http.createServer(app)
 
 require('./routes')(app)
+app.models = require('./model')(app)
 
 app.use((req, res) => res.status(404).json([{
     title: '404', message: 'Route not found'
