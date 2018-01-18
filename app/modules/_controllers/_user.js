@@ -4,7 +4,7 @@ module.exports = app => {
     return {
         create: (req, res) => {
             const body = {};
-            Helpers.validateBody(req.body, 'name', 'email', 'phone', 'password')(body)
+            Helpers.validateBody(req.body, 'name', 'email', 'password')(body)
             User.create(body)
                 .then(resp => res.status(201).json(resp))
                 .catch(err => res.status(400).json(err))

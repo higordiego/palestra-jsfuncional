@@ -12,7 +12,9 @@ module.exports = app => {
     const importsJson = (object) =>  require(`${PATH}/${object}`)
 
     return fs.readdirSync(PATH)
-            .filter(condition)
-            .map(importsJson)
-            .reduce(modelsReturn, {})
+                    .filter(condition)
+                    .map(importsJson)
+                    .reduce(modelsReturn, {})
+
+    
 }
