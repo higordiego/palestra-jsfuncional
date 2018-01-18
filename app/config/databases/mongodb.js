@@ -1,9 +1,7 @@
 const mongoose = require('mongoose')
 mongoose.Promise = require('bluebird')
 
-const online = true
-
-const url = online ? 'mongodb://localhost/apresentacao' : ''
+const url = 'mongodb://mongodb_presentation/apresentacao'
 
 const options = {
     useMongoClient: true
@@ -24,7 +22,6 @@ mongoose.connect(url, options)
     })
 process.on('SIGINT', () => {
     mongoose.connection.close(() => {
-        //console.log('Mongodb: bye : )')
         process.exit(0)
     })
 })

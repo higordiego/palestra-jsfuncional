@@ -4,7 +4,7 @@ module.exports = app => {
     return {
         create: (req, res, next) => {
             const required = ['name', 'email', 'phone', 'password']
-            const error = Validate.requestNotEmpty(req, required, Errors)
+            const error = Validate.requestRequired(req, required, Errors)
             error ? res.status(400).json(error) : next()
         },
         update: (req, res, next) => {
