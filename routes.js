@@ -1,4 +1,4 @@
-const PATH = './app/modules/routes'
+const PATH = './app/modules/_routes'
 const fs = require('fs')
 
 const condition = (object) => !object.startsWith('.')

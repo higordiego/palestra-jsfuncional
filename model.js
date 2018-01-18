@@ -1,9 +1,18 @@
 module.exports = app => {
-    // const User = require('./app/config/models/user')
-    // const ModelUser = require('./app/helpers/models')(app)(User)
+    const PATH = './app/config/models'
+    const fs = require('fs')
 
-    const Books = require('./app/config/models/books')
-    const ModelBooks = require('./app/helpers/models')(app)(Books)
+    const condition = (object) => !object.startsWith('.')
 
-    return ModelBooks
+    const modelsReturn = (result, model, index) => {
+        result[model.name] = require('./app/helpers/models')(model)
+        return result
+    }
+    
+    const importsJson = (object) =>  require(`${PATH}/${object}`)
+
+    return fs.readdirSync(PATH)
+            .filter(condition)
+            .map(importsJson)
+            .reduce(modelsReturn, {})
 }

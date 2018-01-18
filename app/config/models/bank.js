@@ -4,5 +4,5 @@ module.exports = ({
         email: {type: String, required: true, index:{unique: true}},
         passsword: {type: String, required: true}
     },
-    name: 'User',
+    name: 'Bank',
 })
