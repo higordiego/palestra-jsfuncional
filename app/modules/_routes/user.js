@@ -1,7 +1,7 @@
 module.exports = app => {
     const url = '/api/v1/user'
     const Validate = require('../validates/user')(app)
-    const Controller = require('../_controllers/user')(app)
+    const Controller = require('../_controllers/_user')(app)
 
     app.route(`${url}`)
         .get(Controller.findAll)

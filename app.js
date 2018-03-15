@@ -25,7 +25,7 @@ const server = http.createServer(app)
 
 app.models = require('./model')(app)
 
-require('./routes')(app)
+require('./_routes')(app)
 
 app.use((req, res) => res.status(404).json([{
     title: '404', message: 'Route not found'

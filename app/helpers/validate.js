@@ -6,7 +6,8 @@ module.exports = ({
         return req.validationErrors()
     },
     
-    validateBody: (object, ...body) => returnObject => body.map(key =>  returnObject[key] = object[key]),
+    validateBody: (object, ...body) => 
+        returnObject => body.map(key =>  returnObject[key] = object[key]),
 
     requestOptional: (req, required, Errors) => {
         required.map((key, index) => {

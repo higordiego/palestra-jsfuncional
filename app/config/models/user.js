@@ -5,5 +5,5 @@ module.exports = ({
         password: {type: String, required: true},
         phone: {type: String, required: true}
     },
-    name: 'User',
+    name: 'User'
 })
